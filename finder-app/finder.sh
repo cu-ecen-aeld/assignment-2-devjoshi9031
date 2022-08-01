@@ -10,7 +10,7 @@ then
 elif [ -d $filedir ]
 then
 	lines=`grep -ro "$searchstr" $filedir | wc -l`
-	files=`find . | wc -l`
+	files=`ls -A $filedir | wc -l`
 	echo -e "The number of files are $files and the number of matching lines are $lines"
 else
 	echo -e "$filedir is not a directory. Please provide a directory."
